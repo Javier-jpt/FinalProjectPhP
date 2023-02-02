@@ -3,37 +3,54 @@
 include_once "user.php";
 
 ?>
-<!--     // Create FUNCIONA
 
-    // Update FUNCIONA
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>LandScapers</title>
+</head>
+<body>
 
-    // Delete FUNCIONA
+    <header>
+        <navbar class="navbar__header">
+            <div class="navbar__logo">
+                <img> logo
+            </div>
+            <div class="navbar__button"></div>
+                <button class="log-in">Log In</button>
+                <button class="register">Register</button>
+            </div>
+        </navbar>
+    </header>
 
-    // Read FUNCIONA
+    <main>
+        <section class="grid-container">
+            <div class="route">
+                <img class="route__img">
+                <article class="route__text">Route 1 text</article>
+            </div>
+            <div class="route">
+                <img class="route__img">
+                <article class="route__text">Route 2 text</article>
+            </div>
+            <div class="route">
+                <img class="route__img">
+                <article class="route__text">Route 3 text</article>
+            </div>
+            <div class="route">
+                <img class="route__img">
+                <article class="route__text">Route 4 text</article>
+            </div>
+        </section>
+    </main>
 
-
- $users = User::all();
-
-
- <table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Adress</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($users as $user) { ?>
-            <tr>
-                <td><?php echo $user->Username;?></td>
-                <td><?php echo $user->Adress;?></td>
-                <td><?php echo $user->Age;?></td>
-                <td><?php echo $user->Email;?></td>
-                <td><?php echo $user->Password;?></td>
-            </tr>
-            <?php } ?>
-    </tbody>
-</table>  -->
+    <footer>
+        <p>LandScapers © 2023</p>
+    </footer>
+    
+</body>
+</html>
