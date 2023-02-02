@@ -9,8 +9,10 @@ header{
     display:flex;
 }
 
-.navbar__header{
+.navbarheader{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 0.1rem solid black;
     border-radius: 0.2rem;
     width: 100%;
@@ -19,17 +21,14 @@ header{
 
 }
 
-.navbar__img{
+.navbarlogo, .navbarbutton{
     display: flex;
-    justify-content: flex-start;
-
+    align-items: center;
 }
 
-.navbar__button{
-    display: flex;
-    justify-content: flex-end;
-
-}
+.navbarbutton button {
+    padding: 5px 2px;
+    }
 
 
 main{

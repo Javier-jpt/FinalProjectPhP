@@ -20,7 +20,7 @@ include_once "user.php";
             <div class="navbar__logo">
                 <img> logo
             </div>
-            <div class="navbar__button"></div>
+            <div class="navbar__button">
                 <button class="log-in">Log In</button>
                 <button class="register">Register</button>
             </div>
