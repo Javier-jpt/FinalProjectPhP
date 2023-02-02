@@ -23,7 +23,7 @@ include_once "user.php";
             <p class="navbar__title">Landscapers</p>
             <div class="navbar__button">
                 <button class="log-in">Log In</button>
-                <button class="register">Register</button>
+                <button class="register" onclick="window.location.href='sign.php'">Register</button>
             </div>
         </navbar>
     </header>
