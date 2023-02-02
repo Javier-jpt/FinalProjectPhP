@@ -41,16 +41,25 @@ class User extends Connection {
 
     // UPDATE
 
+    public function update() {
+        $this->connection();
+        $pre = mysqli_prepare($this->con, "UPDATE user Set email=? WHERE ID=?");
+        $pre->bind_param("sis", $this->email,$this->ID);
+        $pre->execute();
+    }
 
     // DELETE
 
-    
+    public static function getByID($ID) {
+        $connection = new Connection();
+        $connection->connection();
+        $pre = mysqli_prepare($connection->con, "SELECT * FROM user WHERE ID = ?");
+        $pre->bind_param("i",$ID);
+        $pre->execute();
+        $res = $pre->get_result();
 
-
-
-
-
-
+        return $res->fetch_object(User::class);
+    }
 
 
 }

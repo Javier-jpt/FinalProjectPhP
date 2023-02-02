@@ -2,16 +2,20 @@
 
 include_once "user.php";
 
-$user = new User();
+/* $user = new User();
 $user->username = "Mikie";
 $user->adress = "The Street";
 $user->age = 22;
 $user->email = "mikie22@gmail.com";
 $user->password = "Langui";
-$user->create();
+$user->create(); */
 
 
     // Update
+
+$user = User::getByID(34);
+$user->email = "mikiiiie@gmail.com";
+$user->update();
 
     // Delete
 
