@@ -44,12 +44,21 @@ class User extends Connection {
     public function update() {
         $this->connection();
         $pre = mysqli_prepare($this->con, "UPDATE user Set email=? WHERE ID=?");
-        $pre->bind_param("sis", $this->email,$this->ID);
+        $pre->bind_param("si", $this->email,$this->ID);
         $pre->execute();
     }
 
     // DELETE
 
+    public function delete() {
+        $this->connection();
+        $pre = mysqli_prepare($this->con, "DELETE FROM user Where ID = ?");
+        $pre->bind_param("i", $this->ID);
+        $pre->execute();
+    }
+
+
+    // How to obtain ID (PK)
     public static function getByID($ID) {
         $connection = new Connection();
         $connection->connection();
@@ -60,8 +69,6 @@ class User extends Connection {
 
         return $res->fetch_object(User::class);
     }
-
-
 }
 
 
