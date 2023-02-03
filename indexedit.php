@@ -22,8 +22,7 @@ include_once "user.php";
             </div>
             <p class="navbar__title">Landscapers</p>
             <div class="navbar__button">
-                <button class="log-in">Log In</button>
-                <button class="register">Register</button>
+                <a href="createpost.php"  class="btn btn-primary mt-4">Create post</a>
             </div>
         </navbar>
     </header>
