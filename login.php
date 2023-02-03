@@ -1,5 +1,6 @@
 <?php
 
+
 if(isset($_POST['username']) && 
     isset($_POST['password'])){
 
@@ -20,7 +21,7 @@ if(isset($_POST['username']) &&
         exit;
     } else {
 
-
+    
         $sql = "SELECT * FROM user WHERE username = ? AND password = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$username, $password]);
@@ -29,10 +30,10 @@ if(isset($_POST['username']) &&
             $user = $stmt->fetch();
             $Username = $user['username'];
             $Password = $user['password'];
-
+            
             if($username === $Username) {
                 if($password === $Password){
-                    header("Location: profile.php");
+                    echo "Logged in";
                 }else {
                 $em = "Incorrect password";
                 header("Location: login-index.php?error=$em");
@@ -50,12 +51,16 @@ if(isset($_POST['username']) &&
             header("Location: login-index.php?error=$em");
             exit;
 
-        }
+        }  
     }
 
 }else{
     header("Location: login-index.php?error=error");
     exit;
 }
+
+
+
+
 
 ?>
