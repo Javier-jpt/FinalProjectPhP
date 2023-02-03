@@ -18,7 +18,7 @@ include_once "user.php";
     <header>
         <navbar class="navbar__header">
             <div class="navbar__logo">
-                <img class="navbar__img" src="./assets/Mi_proyecto.png">
+            <a class="register" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
             </div>
             <p class="navbar__title">Landscapers</p>
             <div class="navbar__button">
@@ -28,14 +28,13 @@ include_once "user.php";
     <div class="container">
     <div class="row">
     <div class="col-md-12">
-        <h2 class="mt-4">Crea un alumno</h2>
+        <h2 class="mt-4">Create POST</h2>
         <hr>
         <form method="post">
         <div class="form-group">
             <label for="titulo">Titulo</label>
             <input type="titulo" name="titulo" id="titulo" class="form-control">
             <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
-            <a class="btn btn-primary" href="index.php">Regresar al inicio</a>
         </div>
         <div class="form-group">
             <label for="contenidopost">Contenido texto</label>

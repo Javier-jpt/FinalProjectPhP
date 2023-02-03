@@ -20,6 +20,13 @@ header {
     display:flex;
 }
 
+footer{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
 .navbarheader{
     display: flex;
     justify-content: space-between;
@@ -52,9 +59,6 @@ header {
     margin-left: 45px;
 }
 
-
-
-
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
@@ -79,12 +83,18 @@ header {
     padding: 1rem;
 }
 
-footer{
-    display: flex;
-    padding: 1rem;
-    justify-content: space-around;
-    font-size: 20px;
+.btn-warning {
+    margin-right: 5rem;
 }
+
+#modal::backdrop {
+    background-color: rgb(0, 0, 0, 0.55);
+}
+
+#modal {
+    max-width: 50ch;
+}
+
 
 details[open] summary ~ * {
     animation: open 0.3s ease-in-out;

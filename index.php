@@ -1,9 +1,3 @@
-<?php
-
-include_once "user.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
