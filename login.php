@@ -1,70 +1,61 @@
 <?php
 
-session_start();
+if(isset($_POST['username']) && 
+    isset($_POST['password'])){
 
-if(isset($_POST['Username']) && 
-    isset($_POST['Password'])){
+        include "connection.php";
 
-    include "../db_conn.php";
+    $username = $_POST['username'];
+    $password= $_POST['password'];
 
-    $uname = $_POST['Username'];
-    $pass = $_POST['Password'];
+    $data = "username=".$username;
 
-    $data = "Username=".$uname;
-
-    if(empty($uname)){
-        $em = "User name is required";
-        header("Location: ../login.php?error=$em&$data");
+    if (empty($username)){
+        $em = "User Name is required";
+        header("Location: login-index.php?error=$em");
         exit;
-    }else if(empty($pass)){
+    } else if (empty($password)){
         $em = "Password is required";
-        header("Location: ../login.php?error=$em&$data");
+        header("Location: login-index.php?error=$em");
         exit;
-    }else {
-        if(verificarCredenciales($uname, $pass, $conn)) {
-            $_SESSION['Username'] = $uname;
-            header("Location: ../index.php");
-            exit;
-        } else {
-            $em = "Incorect User name or password";
-            header("Location: ../login.php?error=$em&$data");
-            exit;
-        }
-    }
+    } else {
 
-}else {
-    header("Location: ../login.php?error=error");
-    exit;
-}
 
-function verificarCredenciales($uname, $pass, $conn) {
-    $sql = "SELECT * FROM user WHERE Username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$uname]);
+        $sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$username, $password]);
 
-    if($stmt->rowCount() == 1){
-        $user = $stmt->fetch();
+        if($stmt->rowCount() == 1){
+            $user = $stmt->fetch();
+            $Username = $user['username'];
+            $Password = $user['password'];
 
-        $username =  $user['Username'];
-        $password =  $user['Password'];
-
-        if($username === $uname){
-            if(password_verify($pass, $password)){
-                return true;
+            if($username === $Username) {
+                if($password === $Password){
+                    header("Location: profile.php");
+                }else {
+                $em = "Incorrect password";
+                header("Location: login-index.php?error=$em");
+                exit;
+            } 
             }else {
-                return false;
-            }
+                $em = "Incorrect User name";
+                header("Location: login-index.php?error=$em");
+                exit;
+            } 
 
         }else {
-            return false;
+
+            $em = "Incorrect User name or password";
+            header("Location: login-index.php?error=$em");
+            exit;
+
         }
-
-    }else {
-        return false;
     }
+
+}else{
+    header("Location: login-index.php?error=error");
+    exit;
 }
-
-
-
 
 ?>
