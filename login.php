@@ -30,6 +30,9 @@ if(isset($_POST['username']) &&
             $user = $stmt->fetch();
             $Username = $user['username'];
             $Password = $user['password'];
+            $adress = $user['adress'];
+            $age = $user['age'];
+            $email = $user['email'];
             
             if($username === $Username) {
                 if($password === $Password){
