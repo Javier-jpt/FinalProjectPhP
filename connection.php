@@ -13,13 +13,13 @@ try {
     echo "Connection failed : ". $e->getMessage();
 }
 
-class Connection {
+// class Connection {
 
-    public $con;
-    public function connection() {
-        $this->con = mysqli_connect("localhost", "root", "", "landscapers");
-    }
-}
+//     public $con;
+//     public function connection() {
+//         $this->con = mysqli_connect("localhost", "root", "", "landscapers");
+//     }
+// }
 
 
 ?>

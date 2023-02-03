@@ -9,7 +9,7 @@ if(isset($_POST['userName']) &&
 
         include "connection.php";
 
-    $username = $_POST['userName'];
+    $username = $_POST['username'];
     $adress= $_POST['adress'];
     $age= $_POST['age'];
     $email= $_POST['email'];
@@ -38,19 +38,21 @@ if(isset($_POST['userName']) &&
         header("Location: register.php?error=$em");
         exit;
     } else {
+
+        // $password = password_hash($password, PASSWORD_DEFAULT);
     
-        $sql = "INSERT INTO user(Username, Adress, Age, Email, Password)
+        $sql = "INSERT INTO user(username, adress, age, email, password)
                 VALUES(?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$username, $adress, $age, $email, $password]);
 
-        header("Location: index.php?success");
+        header("Location: register.php?success=Your account has been created successfully");
     exit;
     
     }
 
 }else{
-    header("Location: index.php?error=error");
+    header("Location: register.php?error=error");
     exit;
 }
 
