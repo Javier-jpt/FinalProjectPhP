@@ -11,20 +11,21 @@ include_once "user.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="text/css" href=https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap%27>
     <title>LandScapers</title>
 </head>
 <body>
 
     <header>
-        <navbar class="navbar__header">
-            <div class="navbar__logo">
-                <img class="navbar__img" src="./assets/Mi_proyecto.png">
+        <navbar class="navbarheader">
+            <div class="navbarlogo">
+                <a class="register" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
             </div>
-            <p class="navbar__title">Landscapers</p>
+            <p class="navbartitle">Landscapers</p>
             <div class="navbar__button">
-                <button class="log-in">Log In</button>
-                <button class="register">Register</button>
+                <button class="log-in" onclick="window.location.href='login-index.php'">Log In</button>
+                <button class="register" onclick="window.location.href='register.php'">SignUp</button>
             </div>
         </navbar>
     </header>
@@ -65,6 +66,6 @@ include_once "user.php";
     <footer>
         <p>LandScapers © 2023</p>
     </footer>
-    
+
 </body>
 </html>

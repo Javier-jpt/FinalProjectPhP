@@ -20,7 +20,7 @@ header {
     display:flex;
 }
 
-.navbar__header{
+.navbarheader{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,19 +30,19 @@ header {
 
 }
 
-.navbar__logo,
-.navbar__button{
-  display: flex;
-  align-items: center;
-  padding: 5px, 5px,;
+.navbarlogo,
+.navbarbutton{
+    display: flex;
+    align-items: center;
+    padding: 5px, 5px,;
 }
 
-.navbar__title{
+.navbartitle{
     position: absolute;
     left: 50%;
 }
 
-.navbar__img{
+.navbarimg{
     display: flex;
     width: 20%;
     object-fit: contain;
@@ -146,3 +146,8 @@ details p {
     padding-top: 1rem;
 }
 
+.vh-100 {
+    min-height: 100 vh;
+    
+
+}
