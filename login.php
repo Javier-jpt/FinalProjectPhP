@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 
 if(isset($_POST['username']) && 
     isset($_POST['password'])){
@@ -33,7 +33,10 @@ if(isset($_POST['username']) &&
             
             if($username === $Username) {
                 if($password === $Password){
+					$_SESSION['username'] = $username;
+					$_SESSION['email'] = $email;
                     header("Location: profile.php");
+
                 }else {
                 $em = "Incorrect password";
                 header("Location: login-index.php?error=$em");
@@ -58,9 +61,6 @@ if(isset($_POST['username']) &&
     header("Location: login-index.php?error=error");
     exit;
 }
-
-
-
 
 
 ?>

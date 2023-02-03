@@ -1,3 +1,18 @@
+<?php
+include "connection.php";
+session_start();
+$username = $_SESSION['username'];
+$_SESSION['username'] = $username;
+
+
+$stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
+$stmt->execute([$username]);
+$user = $stmt->fetch();
+
+$username = $user['username'];
+$email = $user['email'];
+$password = $user['password'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,21 +25,15 @@
     </div>
 
 
-	<h1>Profile Page</h1>
-<form>
-	<label for="username">Username:</label>
-	<input type="text" id="username" name="username" disabled value="john_doe"><br><br>
+	<h1>My Profile</h1>
 
-	<label for="email">Email:</label>
-	<input type="email" id="email" name="email" disabled value="john_doe@example.com"><br><br>
+	
+	<h2>User Information</h2>
 
-	<label for="bio">Bio:</label>
-	<textarea id="bio" name="bio" rows="4" cols="50" disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, massa et placerat venenatis, nisi dui laoreet dui, eu luctus eros est eget nisl.</textarea><br><br>
+<p>Username: <?php echo $username; ?></p>
+<p>Email: <?php echo $email; ?></p>
+<p>Password: <?php echo $password; ?></p>
 
-    <label for="email">Password:</label>
-	<input type="password" id="password" name="password" disabled value="example"><br><br>
-
-</form>
 
 </body>
 </html>
