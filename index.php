@@ -26,6 +26,7 @@ include_once "user.php";
             <div class="navbar__button">
                 <button class="log-in" onclick="window.location.href='login-index.php'">Log In</button>
                 <button class="register" onclick="window.location.href='register.php'">SignUp</button>
+                <button class="register" onclick="window.location.href='profile.php'">profile</button>
             </div>
         </navbar>
     </header>

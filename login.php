@@ -36,7 +36,7 @@ if(isset($_POST['username']) &&
             
             if($username === $Username) {
                 if($password === $Password){
-                    echo "Logged in";
+                    header("Location: profile.php");
                 }else {
                 $em = "Incorrect password";
                 header("Location: login-index.php?error=$em");
