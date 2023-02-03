@@ -140,11 +140,14 @@ details summary {
 
 }
 
-.vh-100 {
-    min-height: 100 vh;details p {
+details p {
     font-size: 0.95rem;
     margin:0 0 1rem;
     padding-top: 1rem;
 }
+
+.vh-100 {
+    min-height: 100 vh;
+    
 
 }
