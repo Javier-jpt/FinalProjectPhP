@@ -46,7 +46,6 @@ header {
     display: flex;
     width: 20%;
     object-fit: contain;
-    mix-blend-mode: color-burn;
 }
 
 .register{

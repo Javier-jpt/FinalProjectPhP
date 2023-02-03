@@ -20,11 +20,11 @@ include_once "user.php";
     <header>
         <navbar class="navbarheader">
             <div class="navbarlogo">
-                <img class="navbarimg" src="./assets/Mi_proyecto.png">
+                <a class="register" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
             </div>
             <p class="navbartitle">Landscapers</p>
             <div class="navbar__button">
-                <button class="log-in">Log In</button>
+                <button class="log-in" onclick="window.location.href='login-index.php'">Log In</button>
                 <button class="register" onclick="window.location.href='register.php'">SignUp</button>
             </div>
         </navbar>
