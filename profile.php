@@ -1,6 +1,8 @@
 <?php
 include "connection.php";
+
 session_start();
+
 $username = $_SESSION['username'];
 $_SESSION['username'] = $username;
 
@@ -33,6 +35,9 @@ $password = $user['password'];
 <p>Username: <?php echo $username; ?></p>
 <p>Email: <?php echo $email; ?></p>
 <p>Password: <?php echo $password; ?></p>
+
+
+<a href="logout.php" class="link-secondary">Log Out</a>
 
 
 </body>

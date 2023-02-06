@@ -2,6 +2,10 @@
 
 session_start(); 
 
+include "connection.php";
+
+
+
 if(isset($_SESSION['role'])){
     switch($_SESSION['role']){
         case 1:
@@ -18,8 +22,6 @@ if(isset($_SESSION['role'])){
 
 if(isset($_POST['username']) && 
     isset($_POST['password'])){
-
-        include "connection.php";
 
     $username = $_POST['username'];
     $password= $_POST['password'];
