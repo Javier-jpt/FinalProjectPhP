@@ -21,15 +21,15 @@
             <div class="navbar__button">
                 <button id="btn-open-modal" class="btn btn-warning">Create Post</button>
             </div>
-            <dialog id="modal">
-                <h2>Create a POST</h2>
-                <form method="dialog">
-                    <label>Title <input type="text"></label>
-                    <label>Expirience<input type="text"></label><br>
-                    <button type="submit" class="btn btn-warning">Send Post</button>
-                </form>
-                <button type="button" class="btn btn-danger" id="btn-close-modal">Close</button>
-            </dialog>
+
+                <!-- MODAL -->
+
+
+
+                
+
+
+               
         </navbar>
     </header>
 
@@ -71,3 +71,17 @@
     <script src="logic.js"></script>
 </body>
 </html>
+
+
+
+                <!-- MODAL FUNCIONAL!!! -->
+
+            <!-- <dialog id="modal">
+                <h2>Create a POST</h2>
+                <form method="dialog">
+                    <label>Title <input type="text"></label><br>
+                    <label>Expirience<input type="text"></label><br>
+                    <button type="submit" class="btn btn-warning">Send Post</button>
+                </form>
+                <button type="button" class="btn btn-danger" id="btn-close-modal">Close</button>
+            </dialog> -->

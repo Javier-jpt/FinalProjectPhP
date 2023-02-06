@@ -28,30 +28,30 @@
     <main>
         <section class="grid-container">
             <div class="route">
-                <img class="route__img" src="https://images.unsplash.com/photo-1619126208243-1a683b78d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
                 <details>
                     <summary class="summary__text">Route</summary>
+                    <img class="route__img" src="https://images.unsplash.com/photo-1619126208243-1a683b78d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
                     <p>sdfn jaksjang aja aja ag kajkjaga slkjgbakgba kgfdnasivblk  asd kjabglkabakj fkj bkla gñ</p>
                 </details>
             </div>
             <div class="route">
-                <img class="route__img" src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
                 <details>
                     <summary class="summary__text">Route</summary>
+                    <img class="route__img" src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
                     <p>sdfn jaksjang aja aja ag kajkjaga slkjgbakgba kgfdnasivblk  asd kjabglkabakj fkj bkla gñ</p>
                 </details>
             </div>
             <div class="route">
-                <img class="route__img" src="https://images.unsplash.com/photo-1610088948419-28cc15f5a397?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80">
                 <details>
                     <summary class="summary__text">Route</summary>
+                    <img class="route__img" src="https://images.unsplash.com/photo-1610088948419-28cc15f5a397?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80">
                     <p>sdfn jaksjang aja aja ag kajkjaga slkjgbakgba kgfdnasivblk  asd kjabglkabakj fkj bkla gñ</p>
                 </details>
             </div>
             <div class="route">
-                <img class="route__img" src="https://images.unsplash.com/photo-1603984973710-e915353b35fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
                 <details>
                     <summary class="summary__text">Route</summary>
+                    <img class="route__img" src="https://images.unsplash.com/photo-1603984973710-e915353b35fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
                     <p>sdfn jaksjang aja aja ag kajkjaga slkjgbakgba kgfdnasivblk  asd kjabglkabakj fkj bkla gñ</p>
                 </details>
             </div>
