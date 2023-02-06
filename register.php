@@ -43,7 +43,7 @@
             <?php } ?>
             <div class="mb-3">
                 <label class="form-label">User Name</label>
-                <input type="text" class="form-control" name="username" value="<?php (isset($_GET['userName']))? $_GET['userName']:""; ?>">
+                <input type="text" class="form-control" name="username" value="<?php (isset($_GET['username']))? $_GET['username']:""; ?>">
             </div>
 
             <div class="mb-3">

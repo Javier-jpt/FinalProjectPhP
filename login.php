@@ -1,5 +1,20 @@
 <?php
+
 session_start(); 
+
+if(isset($_SESSION['role'])){
+    switch($_SESSION['role']){
+        case 1:
+            header('Location: index.php');
+        break;
+
+        case 2:
+            header('Location: profile.php');
+        break;
+
+        default:
+    }
+}
 
 if(isset($_POST['username']) && 
     isset($_POST['password'])){
@@ -30,12 +45,25 @@ if(isset($_POST['username']) &&
             $user = $stmt->fetch();
             $Username = $user['username'];
             $Password = $user['password'];
+            $role = $user['role_id'];
             
             if($username === $Username) {
                 if($password === $Password){
 					$_SESSION['username'] = $username;
 					$_SESSION['email'] = $email;
-                    header("Location: profile.php");
+                    $_SESSION['role'] = $role;
+                    
+                    switch($_SESSION['role']){
+                        case 1:
+                            header('Location: index.php');
+                        break;
+                
+                        case 2:
+                            header('Location: profile.php');
+                        break;
+                
+                        default:
+                    }
 
                 }else {
                 $em = "Incorrect password";
