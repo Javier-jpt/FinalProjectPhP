@@ -1,4 +1,24 @@
-  // MODAL //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   // MODAL //
  
  let btnOpenModal = document.querySelector("#btn-open-modal");
  let btnCloseModal = document.querySelector("#btn-close-modal");
@@ -11,4 +31,4 @@
  btnCloseModal.addEventListener("click",()=> {
     modal.close();
  })
-
+ */
