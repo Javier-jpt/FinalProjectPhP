@@ -22,7 +22,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="route" class="form-label">Content</label>
+                <label for="route" class="form-label">Route</label>
                 <select name="route" id="route" class="form-control">
                   <option value="">Select...</option>
                   <?php while ($row_route = $route->fetch_assoc()) { ?>
