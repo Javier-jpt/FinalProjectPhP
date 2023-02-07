@@ -45,6 +45,7 @@ $Routes = $conn->query($sqlRoutes);
             </tr>
         </thead>
         <tbody>
+
             <?php while ($row_route = $Routes->fetch_assoc()) { ?>
                 <tr>
                     <td><?= $row_route['ID']; ?></td>
@@ -85,7 +86,7 @@ $Routes = $conn->query($sqlRoutes);
             let inputContent = editModal.querySelector('.modal-body #content')
             let inputRoute = editModal.querySelector('.modal-body #route')
 
-            let url = "getRoute.php"
+            let url = "./posts/getPost.php"
             let formData = new FormData()
             formData.append('ID',id)
 
@@ -93,7 +94,7 @@ $Routes = $conn->query($sqlRoutes);
                 method: "POST",
                 body: formData
             })
-            .then(response=> response.json())
+            .then(response => response.json())
             .then(data => {
 
                 inputId.value = data.id

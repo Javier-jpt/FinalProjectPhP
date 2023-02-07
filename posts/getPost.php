@@ -2,9 +2,9 @@
 
 require_once '../config/datapost.php';
 
-$id = $conn->real_escape_string($_POST['id']);
+$id = $conn->real_escape_string($_POST['ID']);
 
-$sql = "SELECT ID, title, content, id_route FROM posts WHERE id=$id LIMIT 1";
+$sql = "SELECT ID, title, content, id_route FROM posts WHERE ID=$id LIMIT 1";
 $result = $conn->query($sql);
 $rows = $result->num_rows;
 
