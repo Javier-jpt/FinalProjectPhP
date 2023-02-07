@@ -14,6 +14,7 @@ $user = $stmt->fetch();
 $username = $user['username'];
 $email = $user['email'];
 $password = $user['password'];
+$adress = $user['adress'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +35,7 @@ $password = $user['password'];
 
 <p>Username: <?php echo $username; ?></p>
 <p>Email: <?php echo $email; ?></p>
+<p>Adress: <?php echo $adress; ?></p>
 <p>Password: <?php echo $password; ?></p>
 
 

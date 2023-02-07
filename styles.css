@@ -166,6 +166,11 @@ details p {
     padding-top: 1rem;
 }
 
+form {
+    background-color: #5a3921;
+    color: #fee7b0;
+}
+
 .vh-100 {
     min-height: 100 vh;
     

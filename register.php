@@ -30,7 +30,7 @@
         
 
         <form class="shadow w-450 p-3" action="signup.php" method="post">
-            <h4 class="display-4 text-center fs-0">Create Account</h4><br>
+            <h5 class="display-5 text-center fs-0">Create Account</h5><br>
             <?php if(isset($_GET['error'])){ ?>
             <div class="alert alert-danger" role="alert">
                 <?php echo $_GET['error']; ?>
