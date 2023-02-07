@@ -71,6 +71,9 @@ $Routes = $conn->query($sqlRoutes);
     ?>
 
     <?php include './posts/newModal.php'; ?>
+
+    <?php $route->data_seek(0); ?>
+
     <?php include './posts/editModal.php'; ?>
 
     <script>
@@ -100,7 +103,7 @@ $Routes = $conn->query($sqlRoutes);
                 inputId.value = data.id
                 inputTitle.value = data.title
                 inputContent.value = data.content
-                inputRoute.value = data.route
+                inputRoute.value = data.id_route
 
         }).catch(err => console.log(err))
 

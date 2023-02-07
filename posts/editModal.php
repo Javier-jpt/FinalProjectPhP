@@ -1,5 +1,11 @@
 <!-- Modal -->
+<?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+?>
 
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -9,7 +15,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="post" action="./posts/savepost.php" enctype="multipart/form-data">
+        <form method="post" action="./posts/update.php" enctype="multipart/form-data">
 
         <input type="hidden" id="id" name="id">
 

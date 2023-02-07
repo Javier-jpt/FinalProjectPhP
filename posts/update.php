@@ -2,13 +2,15 @@
 
 require_once '../config/datapost.php';
 
+$id = $conn->real_escape_string($_POST['ID']);
 $title = $conn->real_escape_string($_POST['title']);
 $content = $conn->real_escape_string($_POST['content']);
 $route = $conn->real_escape_string($_POST['route']);
 
-$sql = "INSERT INTO posts (title, content, id_route, timer) VALUES ('$title', '$content', $route, NOW())";
+$sql = "UPDATE posts SET title ='$title',content ='$content', id_route =$route WHERE ID ='$id'";
 if($conn->query($sql)) {
-    $id = $conn->insert_id;
 }
 
 header('Location: ../indexuser1.php');
+
+?>
