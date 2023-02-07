@@ -11,15 +11,17 @@
 </head>
 <body>
 
-    <header>
+<header>
         <navbar class="navbarheader">
             <div class="navbarlogo">
-                <a class="register" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
+                <a class="logo" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
+                <p class="navbartitle">Landscapers</p>
             </div>
-            <p class="navbartitle">Landscapers</p>
+            
             <div class="navbar__button">
-                <button class="log-in" onclick="window.location.href='login-index.php'">Log In</button>
-                <button class="register" onclick="window.location.href='register.php'">SignUp</button>
+                <!-- <button class="log-in btn" onclick="window.location.href='login-index.php'">Log In</button>
+                <button class="register btn" onclick="window.location.href='register.php'">SignUp</button>
+                <button class="profile.. btn" onclick="window.location.href='profile.php'">profile</button> -->
             </div>
         </navbar>
     </header>
@@ -74,5 +76,10 @@
 
 
     </main>
+    
+    <footer>
+        <p>LandScapers © 2023</p>
+    </footer>
+
 
 </html>

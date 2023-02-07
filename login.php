@@ -9,11 +9,11 @@ include "connection.php";
 if(isset($_SESSION['role'])){
     switch($_SESSION['role']){
         case 1:
-            header('Location: index.php');
+            header('Location: profile-admin.php');
         break;
 
         case 2:
-            header('Location: profile.php');
+            header('Location: profile-user.php');
         break;
 
         default:
@@ -45,6 +45,7 @@ if(isset($_POST['username']) &&
 
         if($stmt->rowCount() == 1){
             $user = $stmt->fetch();
+            $id = $user['ID'];
             $Username = $user['username'];
             $Password = $user['password'];
             $role = $user['role_id'];
@@ -54,14 +55,14 @@ if(isset($_POST['username']) &&
 					$_SESSION['username'] = $username;
 					$_SESSION['email'] = $email;
                     $_SESSION['role'] = $role;
-                    
+                    $_SESSION['id'] = $id;
                     switch($_SESSION['role']){
                         case 1:
-                            header('Location: index.php');
+                            header('Location: profile-admin.php');
                         break;
                 
                         case 2:
-                            header('Location: profile.php');
+                            header('Location: profile-user.php');
                         break;
                 
                         default:
