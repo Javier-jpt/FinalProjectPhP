@@ -45,6 +45,7 @@ $Routes = $conn->query($sqlRoutes);
             </tr>
         </thead>
         <tbody>
+
             <?php while ($row_route = $Routes->fetch_assoc()) { ?>
                 <tr>
                     <td><?= $row_route['ID']; ?></td>
@@ -54,7 +55,7 @@ $Routes = $conn->query($sqlRoutes);
                     <td></td>
                     <td>
 
-                        <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+                        <a href="#" class="btn btn-sm btn-warning" id="editbutton" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
                         <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>  Delete</a>
 
                     </td>
@@ -70,6 +71,9 @@ $Routes = $conn->query($sqlRoutes);
     ?>
 
     <?php include './posts/newModal.php'; ?>
+
+    <?php $route->data_seek(0); ?>
+
     <?php include './posts/editModal.php'; ?>
 
     <script>
@@ -85,7 +89,7 @@ $Routes = $conn->query($sqlRoutes);
             let inputContent = editModal.querySelector('.modal-body #content')
             let inputRoute = editModal.querySelector('.modal-body #route')
 
-            let url = "getRoute.php"
+            let url = "./posts/getPost.php"
             let formData = new FormData()
             formData.append('ID',id)
 
@@ -93,13 +97,13 @@ $Routes = $conn->query($sqlRoutes);
                 method: "POST",
                 body: formData
             })
-            .then(response=> response.json())
+            .then(response => response.json())
             .then(data => {
 
                 inputId.value = data.id
                 inputTitle.value = data.title
                 inputContent.value = data.content
-                inputRoute.value = data.route
+                inputRoute.value = data.id_route
 
         }).catch(err => console.log(err))
 
