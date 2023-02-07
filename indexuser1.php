@@ -100,7 +100,7 @@ $Routes = $conn->query($sqlRoutes);
             .then(response => response.json())
             .then(data => {
 
-                inputId.value = data.id
+                inputId.value = data.ID
                 inputTitle.value = data.title
                 inputContent.value = data.content
                 inputRoute.value = data.id_route

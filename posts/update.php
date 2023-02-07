@@ -2,7 +2,7 @@
 
 require_once '../config/datapost.php';
 
-$id = $conn->real_escape_string($_POST['ID']);
+$id = $conn->real_escape_string($_POST['id']);
 $title = $conn->real_escape_string($_POST['title']);
 $content = $conn->real_escape_string($_POST['content']);
 $route = $conn->real_escape_string($_POST['route']);
