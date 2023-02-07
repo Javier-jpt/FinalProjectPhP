@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/datapost.php';
+require '../config/datapost.php';
 
 $title = $conn->real_escape_string($_POST['title']);
 $content = $conn->real_escape_string($_POST['content']);

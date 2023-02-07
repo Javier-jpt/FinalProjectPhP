@@ -55,7 +55,7 @@ $Routes = $conn->query($sqlRoutes);
                     <td></td>
                     <td>
 
-                        <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+                        <a href="#" class="btn btn-sm btn-warning" id="editbutton" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
                         <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>  Delete</a>
 
                     </td>
