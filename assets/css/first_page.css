@@ -102,7 +102,7 @@ section img#top{
 }
 
 section img#bottom{
-    z-index: 13;
+    z-index: 100;
 }
 
 
@@ -179,31 +179,31 @@ section img#midle{
     background-image: url(arriba3.webp);
   }
   
-  #top.dark-mode {
+#top.dark-mode {
     background-image: url(arriba3-dark.jpg);
   }
   
-  #midle.light-mode {
+#midle.light-mode {
     background-image: url(parte_medio.webp);
   }
   
-  #midle.dark-mode {
+#midle.dark-mode {
     background-image: url(parte_medio-dark.webp);
   }
   
-  #bottom.light-mode {
+#bottom.light-mode {
     background-image: url(trees.webp);
   }
   
-  #bottom.dark-mode {
+#bottom.dark-mode {
     background-image: url(trees-dark.webp);
   }
   
-  #sun.light-mode {
+#sun.light-mode {
     background-image: url(sun2.webp);
   }
   
-  #sun.dark-mode {
+#sun.dark-mode {
     background-image: url(sun2-dark.webp);
   }
   

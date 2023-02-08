@@ -32,14 +32,14 @@ $Routes = $conn->query($sqlRoutes);
         </ul>
     </header>
     <section>
-        <img src="arriba3.webp" alt="part1" id="top" class="light-mode">
+        <img alt="part1" id="top" class="light-mode">
         <h2 id="text"></h2>
-        <img src="parte_medio.webp" alt="part1" id="midle" class="light-mode">
+        <img  alt="part1" id="midle" class="light-mode">
         <button></button>
-        <img src="sun2.webp" alt="part1" id="sun" class="light-mode">
+        <img  alt="part1" id="sun" class="light-mode">
 
         <a href="#sec" id="btn">Explore</a>
-        <img src="trees.webp" alt="part1" id="bottom" class="light-mode">
+        <img  alt="part1" id="bottom" class="light-mode">
 
     </section>
     <div class="sec" id="sec">
