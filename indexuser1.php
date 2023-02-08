@@ -15,6 +15,7 @@ $Routes = $conn->query($sqlRoutes);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandScapers</title>
+    <script src="./assets/js/logic.js"></script>
 
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
@@ -27,16 +28,19 @@ $Routes = $conn->query($sqlRoutes);
             <li><button id="btn_top" class="log-in" onclick="window.location.href='login-index.php'">Log In</button></li>
             <li><button id="btn_top" class="register" onclick="window.location.href='register.php'">SignUp</button></li>
             <li><button id="btn_top" class="register" onclick="window.location.href='profile.php'">profile</button></li>
+            <li><button id="toggle-mode-btn" class="register">go dark</button></li>
         </ul>
     </header>
     <section>
-        
-        <img src="arriba3.webp" alt="part1" id="top">
+        <img src="arriba3.webp" alt="part1" id="top" class="light-mode">
         <h2 id="text"></h2>
-        <img src="parte_medio.webp" alt="part1" id="midle">
-        <img src="sun2.webp" alt="part1" id="sun">
+        <img src="parte_medio.webp" alt="part1" id="midle" class="light-mode">
+        <button></button>
+        <img src="sun2.webp" alt="part1" id="sun" class="light-mode">
+
         <a href="#sec" id="btn">Explore</a>
-        <img src="trees.webp" alt="part1" id="bottom">
+        <img src="trees.webp" alt="part1" id="bottom" class="light-mode">
+
     </section>
     <div class="sec" id="sec">
       
@@ -90,6 +94,38 @@ $Routes = $conn->query($sqlRoutes);
             button.style.marginTop =value * 1.5 + 'px';
 
         })
+        
+
+const toggleBtn = document.getElementById('toggle-mode-btn');
+const body = document.body;
+
+toggleBtn.addEventListener('click', function() {
+  if (body.classList.contains('light-mode')) {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    clouds.classList.remove('light-mode');
+    clouds.classList.add('dark-mode');
+    montains.classList.remove('light-mode');
+    montains.classList.add('dark-mode');
+    trees.classList.remove('light-mode');
+    trees.classList.add('dark-mode');
+    sun.classList.remove('light-mode');
+    sun.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    clouds.classList.remove('dark-mode');
+    clouds.classList.add('light-mode');
+    montains.classList.remove('dark-mode');
+    montains.classList.add('light-mode');
+    trees.classList.remove('dark-mode');
+    trees.classList.add('light-mode');
+    sun.classList.remove('dark-mode');
+    sun.classList.add('light-mode');
+  
+}});
+
+
     </script>
     
 </body>

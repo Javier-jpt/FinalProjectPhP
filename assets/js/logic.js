@@ -1,23 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*   // MODAL //
  
  let btnOpenModal = document.querySelector("#btn-open-modal");

@@ -1,6 +1,5 @@
 <!-- Modal -->
 
-
 <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -32,13 +31,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="images" class="form-label">Images</label>
-                <input type="file" name="images" id="images" class="form-control" accept="images/png">
+                <label for="photo" class="form-label">Image</label>
+                <input type="file" name="photo" id="photo" class="form-control" required>
             </div>
 
             <div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>  Save changes</button>
+                <button type="submit" name="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>  Save changes</button>
             </div>
         </form>
       </div>

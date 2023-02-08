@@ -172,3 +172,38 @@ section img#midle{
     font-size: 1em;
     color: black;
 }
+
+
+
+#top.light-mode {
+    background-image: url(arriba3.webp);
+  }
+  
+  #top.dark-mode {
+    background-image: url(arriba3-dark.jpg);
+  }
+  
+  #midle.light-mode {
+    background-image: url(parte_medio.webp);
+  }
+  
+  #midle.dark-mode {
+    background-image: url(parte_medio-dark.webp);
+  }
+  
+  #bottom.light-mode {
+    background-image: url(trees.webp);
+  }
+  
+  #bottom.dark-mode {
+    background-image: url(trees-dark.webp);
+  }
+  
+  #sun.light-mode {
+    background-image: url(sun2.webp);
+  }
+  
+  #sun.dark-mode {
+    background-image: url(sun2-dark.webp);
+  }
+  
