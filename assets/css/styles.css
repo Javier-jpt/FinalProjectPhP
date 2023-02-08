@@ -12,16 +12,8 @@ body{
 }
 
 main {
-    padding: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    background-color: #fee7b0c9;
 }
-
-header {
-    display:flex;
-    background:  #5a3921;
-}
-
 
 .navbarheader{
     display: flex;
@@ -70,9 +62,7 @@ header {
 }
 
 .navbarimg{
-    display: flex;
-    width: 20%;
-    object-fit: contain;
+    width: 60%;
 }
 
 .register{
@@ -213,8 +203,9 @@ details p {
 }
 
 form {
-    background-color: #5a3921;
-    color: #fee7b0;
+    background-color: #ffffff;
+    color: #040403;
+    border-radius: 10px;
 }
 
 .vh-100 {
@@ -232,8 +223,14 @@ footer{
     padding: 1rem;
     justify-content: space-around;
     font-size: 20px;
-    background:   #5a3921;
+    background:   #71492bf8;
     color: #fee7b0;
+}
+
+.container-fluid{
+    background-color: #71492bf8;
+    margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 
@@ -255,4 +252,8 @@ footer{
     align-items: center;
     border-radius: 0.2rem;
     font-size: 30px;
+}
+
+.link{
+    text-decoration: none;
 }
