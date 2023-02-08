@@ -54,10 +54,8 @@ $Routes = $conn->query($sqlRoutes);
                     <td><?= $row_route['route']; ?></td>
                     <td></td>
                     <td>
-
-                        <a href="#" class="btn btn-sm btn-warning" id="editbutton" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>  Delete</a>
-
+                <a href="#" class="btn btn-sm btn-warning edit" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+                <a href="#" class="btn btn-sm btn-danger delete" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-trash"></i>  Delete</a>
                     </td>
                 </tr>
 
@@ -100,7 +98,7 @@ $Routes = $conn->query($sqlRoutes);
             .then(response => response.json())
             .then(data => {
 
-                inputId.value = data.id
+                inputId.value = data.ID
                 inputTitle.value = data.title
                 inputContent.value = data.content
                 inputRoute.value = data.id_route
@@ -109,7 +107,29 @@ $Routes = $conn->query($sqlRoutes);
 
         })
     </script>
+<script>
+    let deleteButtons = document.querySelectorAll('.delete')
 
+    deleteButtons.forEach(deleteButton => {
+        deleteButton.addEventListener('click', event => {
+            event.preventDefault()
+            let id = deleteButton.getAttribute('data-bs-id')
+            let result = confirm(`Are you sure you want to delete post with id ${id}?`)
+
+            if (result) {
+                let xhr = new XMLHttpRequest()
+                xhr.open('DELETE', `./config/datapost.php?id=${id}`, true)
+                xhr.send()
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        location.reload()
+                    }
+                }
+            }
+        })
+    })
+</script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
     
 </body>
