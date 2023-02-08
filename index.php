@@ -27,7 +27,6 @@
     </header>
 
     <main>
-
     
         <section class="grid-container">
             <div class="route">

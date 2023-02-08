@@ -54,8 +54,8 @@ $adress = $user['adress'];
 <p>Password: <?php echo $password; ?></p>
 
 
-<a href="edit-profile.php?id=<?php echo $user['ID'];?>" class="link-secondary">Edit</a>
-<a href="delete-profile.php?id=<?php echo $user['ID'];?>" class="link-secondary">Delete</a>
+<a href="/admin/edit-profile.php?id=<?php echo $user['ID'];?>" class="link-secondary">Edit</a>
+<a href="/admin/delete-profile.php?id=<?php echo $user['ID'];?>" class="link-secondary">Delete</a>
 
 
 <a href="logout.php" class="link-secondary">Log Out</a>
