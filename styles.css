@@ -256,3 +256,7 @@ footer{
     border-radius: 0.2rem;
     font-size: 30px;
 }
+
+.input-information {
+    background-color: #7a7a44;
+}
