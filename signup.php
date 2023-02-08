@@ -51,7 +51,7 @@ if(isset($_POST['username']) &&
 
         header("Location: register.php?success=Your account has been created successfully");
     exit;
-    
+
     }
 
 }else{
