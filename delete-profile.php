@@ -12,7 +12,9 @@ $stnt = $conn->prepare("DELETE FROM user WHERE `ID` = ?;");
 $result = $stnt->execute([$code]);
 
 if($result === TRUE) {
-    header("Location: index.php");
+
+    $em = "Your account has been deleted";
+    header("Location: register.php?error=$em");
 } else {
     echo "error";
 }

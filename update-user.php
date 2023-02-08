@@ -1,6 +1,5 @@
 <?php
 
-// print_r($_POST);
 
 if (!isset($_POST['hidden'])){
     header('Location: index.php');
@@ -18,7 +17,7 @@ $stnt = $conn->prepare("UPDATE user SET username = ?, adress = ?, email = ?, pas
 $result = $stnt->execute([$username2,$adress2, $email2, $password2,$id2]);
 
 if($result === TRUE) {
-    header("Location: login-index.php");
+    header("Location: login-index.php?success=Your profile has been edited successfully");
 } else {
     echo "error";
 }

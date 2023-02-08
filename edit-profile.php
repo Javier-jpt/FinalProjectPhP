@@ -11,7 +11,6 @@ $id = $_GET['id'];
 $stnt = $conn->prepare("SELECT * FROM user WHERE `ID` = ?");
 $stnt->execute([$id]);
 $user = $stnt->fetch(PDO::FETCH_OBJ);
-print_r($user);
 
 
 ?>
