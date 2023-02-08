@@ -139,10 +139,27 @@ section img#midle{
     color: black;
 }
 
+#btn_top{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius:40px;
+    background: white;
+    color: black;
+    font-size: 1.5e;
+    z-index: 12;
+}
+
+#btn_top:hover{
+    background: black;
+    color: white;
+}
+
 .sec{
+    margin-top: 50rem;
+    margin-bottom: 50rem;
     position: relative;
     padding: 100px;
-    background: #3e615b;
 }
 
 .sec h2{

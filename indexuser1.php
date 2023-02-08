@@ -18,8 +18,30 @@ $Routes = $conn->query($sqlRoutes);
 
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/first_page.css">
 </head>
 <body>
+<header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><button id="btn_top" class="log-in" onclick="window.location.href='login-index.php'">Log In</button></li>
+            <li><button id="btn_top" class="register" onclick="window.location.href='register.php'">SignUp</button></li>
+            <li><button id="btn_top" class="register" onclick="window.location.href='profile.php'">profile</button></li>
+        </ul>
+    </header>
+    <section>
+        
+        <img src="arriba3.webp" alt="part1" id="top">
+        <h2 id="text"></h2>
+        <img src="parte_medio.webp" alt="part1" id="midle">
+        <img src="sun2.webp" alt="part1" id="sun">
+        <a href="#sec" id="btn">Explore</a>
+        <img src="trees.webp" alt="part1" id="bottom">
+    </section>
+    <div class="sec" id="sec">
+      
+
+
 
     <div class="container py-3">
 
@@ -45,6 +67,35 @@ $Routes = $conn->query($sqlRoutes);
             </tr>
         </thead>
         <tbody>
+
+     
+    </div>
+
+
+    <script>
+        const clouds = document.getElementById('top');
+        const sun = document.getElementById('sun');
+        const montains = document.getElementById('midle');
+        const trees = document.getElementById('bottom');
+        const text = document.getElementById('text');
+        const button = document.getElementById('btn');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            clouds.style.left = value * 0.5 + 'px';
+            sun.style.top = value * 1.05 + 'px';
+            montains.style.top = value * + 0 + 'px';
+            // trees.style.top = value * - 0.15 + 'px';
+            text.style.marginRight =value * 4 + 'px';
+            button.style.marginTop =value * 1.5 + 'px';
+
+        })
+    </script>
+    
+</body>
+</html>
+
+
 
             <?php while ($row_route = $Routes->fetch_assoc()) { ?>
                 <tr>
