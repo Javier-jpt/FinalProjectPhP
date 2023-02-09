@@ -23,23 +23,24 @@ $Routes = $conn->query($sqlRoutes);
 </head>
 <body>
 <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="#" class="logo"></a>
         <ul>
-            <li><button id="btn_top" class="log-in" onclick="window.location.href='./session/login-index.php'">Log In</button></li>
-            <li><button id="btn_top" class="register" onclick="window.location.href='./session/register.php'">SignUp</button></li>
-            <!-- <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile.php'">profile</button></li> -->
-            <li><button id="toggle-mode-btn" class="register">go dark</button></li>
+            <li><button id="btn_top" class="log-in" onclick="window.location.href='login-index.php'">Log In</button></li>
+            <li><button id="btn_top" class="register" onclick="window.location.href='register.php'">SignUp</button></li>
+            <li><button id="btn_top" class="register" onclick="window.location.href='profile.php'">profile</button></li>
+            <li> <button id="toggle-mode-btn" class="register">go dark</button></li>
         </ul>
+       
     </header>
     <section>
-        <img src="arriba3.webp" alt="part1" id="top" class="light-mode">
+        <img alt="part1" id="top" class="light-mode">
+        <img alt="part1" id="top2" class="light-mode">
         <h2 id="text"></h2>
-        <img src="parte_medio.webp" alt="part1" id="midle" class="light-mode">
-        <button></button>
-        <img src="sun2.webp" alt="part1" id="sun" class="light-mode">
+        <img src="/assets/css/parte_medio.webp" alt="part1" id="midle" class="light-mode">
+        <img  alt="part1" id="sun" class="light-mode initial">
 
         <a href="#sec" id="btn">Explore</a>
-        <img src="trees.webp" alt="part1" id="bottom" class="light-mode">
+        <img alt="part1" id="bottom" class="light-mode">
 
     </section>
     <div class="sec" id="sec">
@@ -76,6 +77,7 @@ $Routes = $conn->query($sqlRoutes);
 
     <script>
         const clouds = document.getElementById('top');
+        const underClouds = document.getElementById('top2');
         const sun = document.getElementById('sun');
         const montains = document.getElementById('midle');
         const trees = document.getElementById('bottom');
@@ -95,10 +97,27 @@ $Routes = $conn->query($sqlRoutes);
         
 
 const toggleBtn = document.getElementById('toggle-mode-btn');
+const darkBackground = document.getElementById('top2');
 const body = document.body;
+
+function cambiarImagen() {
+  clouds.classList.toggle('active');
+  underClouds.classList.toggle('active');
+}
+
 
 toggleBtn.addEventListener('click', function() {
   if (body.classList.contains('light-mode')) {
+    setTimeout(()=>{
+
+    sun.classList.remove('light-mode');
+    sun.classList.add('dark-mode');
+},1000)
+
+
+    setTimeout(() => {
+        
+    
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
     clouds.classList.remove('light-mode');
@@ -107,9 +126,20 @@ toggleBtn.addEventListener('click', function() {
     montains.classList.add('dark-mode');
     trees.classList.remove('light-mode');
     trees.classList.add('dark-mode');
-    sun.classList.remove('light-mode');
-    sun.classList.add('dark-mode');
+
+    darkBackground.classList.remove('light-mode');
+    darkBackground.classList.add('dark-mode');
+    clouds.style.opacity = "1";
+    darkBackground.style.opacity = "1";
+
+},1000);
   } else {
+    setTimeout(() => { 
+    sun.classList.remove('dark-mode');
+    sun.classList.add('light-mode');
+}, 1000)
+
+  setTimeout(() => {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
     clouds.classList.remove('dark-mode');
@@ -118,10 +148,22 @@ toggleBtn.addEventListener('click', function() {
     montains.classList.add('light-mode');
     trees.classList.remove('dark-mode');
     trees.classList.add('light-mode');
-    sun.classList.remove('dark-mode');
-    sun.classList.add('light-mode');
-  
-}});
+
+    darkBackground.classList.remove('dark-mode');
+    darkBackground.classList.add('light-mode');
+    clouds.style.opacity = "1";
+    darkBackground.style.opacity = "0";
+  }, 1000)
+}
+
+
+sun.classList.add('reverse');
+
+setTimeout(function() {
+    sun.classList.remove('reverse');
+}, 0.1);
+});
+
 
 
     </script>
