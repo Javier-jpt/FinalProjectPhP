@@ -8,9 +8,8 @@
 }
 
 body{
-    min-height: 100vh;
+    min-height: 150vh;
     overflow-x: hidden;
-    background-color: linear-gradient( #283739, #eaf6f6)
 
 }
 
@@ -63,10 +62,11 @@ header ul li a.active{
 }
 
 section{
+    top: -10rem;
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     padding: 100px;
     display: flex;
     justify-content: center;
@@ -86,8 +86,8 @@ section::before{
 section img{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -2rem;
+    width: 150%;
     height: 100%;
     object-fit: cover;
     pointer-events: none;
@@ -102,7 +102,7 @@ section img#top{
 }
 
 section img#bottom{
-    z-index: 100;
+    z-index: 14;
 }
 
 
@@ -116,7 +116,7 @@ section img#midle{
     top: 45rem;
     position: absolute;
     color: black;
-    z-index: 12;
+    z-index: 10;
     white-space: nowrap;
     font-size: 5vw;
     
@@ -177,18 +177,33 @@ section img#midle{
 
 #top.light-mode {
     background-image: url(arriba3.webp);
+    opacity: 1;
+    transition: opacity 0.5s ease;
   }
   
 #top.dark-mode {
-    background-image: url(arriba3-dark.jpg);
+    background-image: url(stars.webp);
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
   
+#top2.light-mode {
+    background-image: url(fondo_light.webp);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+#top2.dark-mode {
+    background-image: url(fondo_dark.webp);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
 #midle.light-mode {
     background-image: url(parte_medio.webp);
   }
   
 #midle.dark-mode {
-    background-image: url(parte_medio-dark.webp);
+    background-image: url(parte_medio_dark2.webp);
   }
   
 #bottom.light-mode {
@@ -196,14 +211,54 @@ section img#midle{
   }
   
 #bottom.dark-mode {
-    background-image: url(trees-dark.webp);
+    background-image: url(trees2.webp);
   }
   
 #sun.light-mode {
     background-image: url(sun2.webp);
+    animation: slideDown 1.5s ease-in-out forwards;
   }
+
+#sun.light-mode.reverse {
+    animation: slideDown 1.5s ease-in-out forwards;
+}
   
 #sun.dark-mode {
-    background-image: url(sun2-dark.webp);
+    background-image: url(moon2.webp);
+    animation: slideUp 1.5s ease-in-out forwards;
+    top: -20rem;
+    
+  }
+
+  #sun.dark-mode.reverse {
+    animation: slideDown 0.5s ease-in-out forwards;
+}
+  
+.active {
+  opacity: 1;
+}
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
   }
   
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+
+.slide-in-blurred-top {
+	-webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
