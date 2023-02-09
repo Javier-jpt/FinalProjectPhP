@@ -1,19 +1,19 @@
 <?php
 
-require_once '../config/datapost.php';
+require_once '../config/datauser.php';
 
 $id = $conn->real_escape_string($_POST['ID']);
 
-$sql = "SELECT ID, username, adress, role_id FROM user WHERE ID=$id LIMIT 1";
+$sql = "SELECT ID, username, adress, role_id , age, email FROM user WHERE ID=$id LIMIT 1";
 $result = $conn->query($sql);
 $rows = $result->num_rows;
 
-$posts = [];
+$roles = [];
 
 if ($rows > 0) {
-    $posts = $result->fetch_array();
+    $roles = $result->fetch_array();
 }
 
-echo json_encode($posts, JSON_UNESCAPED_UNICODE);
+echo json_encode($roles, JSON_UNESCAPED_UNICODE);
 
 ?>
