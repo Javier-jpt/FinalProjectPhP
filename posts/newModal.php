@@ -31,11 +31,6 @@
                 </select>
             </div>
 
-            <div class="mb-3">
-                <label for="images" class="form-label">Images</label>
-                <input type="file" name="images" id="images" class="form-control" accept="images/png">
-            </div>
-
             <div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>  Save changes</button>

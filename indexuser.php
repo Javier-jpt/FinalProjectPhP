@@ -57,6 +57,22 @@ $Routes = $conn->query($sqlRoutes);
         </div>
 
     </div>
+
+    
+    <table class="table table-sm table-striped table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Route</th>
+                <th>Imagen</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    </div>
     
     <script>
         const clouds = document.getElementById('top');
@@ -148,6 +164,10 @@ setTimeout(function() {
 });
 
     </script>
+
+</body>
+</html>
+
 
 <?php while ($row_route = $Routes->fetch_assoc()) { ?>
                 <tr>

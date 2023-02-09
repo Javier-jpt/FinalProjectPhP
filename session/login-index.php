@@ -14,7 +14,7 @@
 <nav class="navbar bg-light">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">
-    <img src="../assets/Mi_proyecto.png"alt="Logo" width="150" height="150" class="d-inline-block align-text-top" onclick="window.location.href='../index.php'">
+    <img src="../assets/Mi_proyecto.png"alt="Logo" width="150" height="150" class="d-inline-block align-text-top" onclick="window.location.href='../indexuser.php'">
     <h2 class="position-absolute top-50 start-50 translate-middle text-dark">LandScapers</h2>
     </a>
 </div>
