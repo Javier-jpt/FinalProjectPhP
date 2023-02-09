@@ -3,6 +3,10 @@
     font-family: 'Roboto', sans-serif; 
 }
 
+/* .body-index {
+    background: linear-gradient(0deg, rgba(92,244,246,1) 0%, rgba(0,140,129,1) 100%);
+} */
+
 .navbarlogo,
 .navbarbutton{
     display: flex;
@@ -104,13 +108,19 @@
     background-color: #fee7b0;
 }
 
-footer{
+footer {
     display: flex;
     padding: 1rem;
     justify-content: space-around;
-    font-size: 20px;
+    font-size: 50px;
     background:   #71492bf8;
     color: #fee7b0;
+}
+
+.footer {
+    background-color: white;
+    color: black;
+    user-select: none;
 }
 
 .container-fluid{
@@ -143,7 +153,17 @@ footer{
     text-decoration: none;
 }
 
-.textindex {
-    background: linear-gradient(0deg, rgba(92,244,246,1) 0%, rgba(0,140,129,1) 100%);
-    padding-bottom: 20rem;
+.index-text {
+    -webkit-box-shadow: 0px 0px 56px 18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 56px 18px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 56px 18px rgba(0,0,0,0.75);
+    margin: 30rem;
+    border-radius: 10px;
+    font-size: 40px;
+    padding: 0;
+    user-select: none;
+}
+
+.index-title {
+    color: darkolivegreen;
 }

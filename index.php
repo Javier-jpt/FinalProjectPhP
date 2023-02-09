@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/first_page.css">
 </head>
-<body>
+<body class="body-index">
     <header>
         <a href="#" class="logo"></a>
         <ul>
@@ -31,11 +31,15 @@
         <img alt="part1" id="bottom" class="light-mode">
     </section>
 
-    <div class="sec textindex" id="sec">
+    <div class="sec index-text" id="sec">
         <div class="container py-3">
-        <h2 class="text-center">LANDSCAPERS</h2>
+        <h2 class="text-center index-title">Hello mountain lover!</h2>
             <div class="justify-content-end">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde deleniti qui magni iusto, eos velit, soluta, dignissimos pariatur asperiores magnam alias enim tenetur explicabo exercitationem iure facere blanditiis accusantium ullam!</p>
+                <p>Welcome to Landscapers, a space designed for mountain lovers, where you can find different routes of hiking, cycling and trail running.</p>
+                <p>This blog is created by four young lovers of sport, mountains and nature, whose passion has brought us together since we were children, growing up loving every corner of the paths that we were discovering.</p>
+                <p>As more we walked on the mountain, as more we climbed it, it didn't matter if it was in hot months or in cold months, we liked more the sensations we experienced. So, one afternoon the idea of sharing these places that stole our hearts with others arose.</p>
+                <p>On this page we want to give the opportunity to share routes and trails with details to follow them and in this way also create a community.</p><br>
+                <p>Glad you're here and see you on the mountain!</p>
             </div>
         </div>
         
@@ -76,14 +80,11 @@ function cambiarImagen() {
 toggleBtn.addEventListener('click', function() {
   if (body.classList.contains('light-mode')) {
     setTimeout(()=>{
-
     sun.classList.remove('light-mode');
     sun.classList.add('dark-mode');
 },1000)
 
-
-    setTimeout(() => {
-        
+    setTimeout(() => {     
     
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
@@ -135,5 +136,9 @@ setTimeout(function() {
 
     </script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="footer">
+        <p>LandScapers © 2023 @ <a href="https://assemblerinstitute.com/?utm_medium=paidsearch&utm_source=google.com&utm_campaign=branding&gclid=CjwKCAiArY2fBhB9EiwAWqHK6sAVZAJi6gNirAygoFPY8NRJJLR-JgCdfZu7ZBZdUynIqii66lt4ahoCo5MQAvD_BwE">Assembler Institute of Technology</a></p>
+    </footer>
 </body>
 </html>

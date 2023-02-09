@@ -16,7 +16,7 @@ $Routes = $conn->query($sqlRoutes);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandScapers</title>
     <script src="./assets/js/logic.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/first_page.css">
@@ -26,7 +26,7 @@ $Routes = $conn->query($sqlRoutes);
         <a href="#" class="logo"></a>
         <ul>
             <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
-            <li> <button id="toggle-mode-btn" class="register">go dark</button></li>
+            <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
         </ul>
         <div>
             <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
@@ -44,7 +44,6 @@ $Routes = $conn->query($sqlRoutes);
 
     </section>
     <div class="sec" id="sec">
-
 
     <div class="container py-3">
 
@@ -76,8 +75,7 @@ $Routes = $conn->query($sqlRoutes);
             text.style.marginRight =value * 4 + 'px';
             button.style.marginTop =value * 1.5 + 'px';
 
-        })
-        
+        }) 
 
 const toggleBtn = document.getElementById('toggle-mode-btn');
 const darkBackground = document.getElementById('top2');
@@ -88,7 +86,6 @@ function cambiarImagen() {
   underClouds.classList.toggle('active');
 }
 
-
 toggleBtn.addEventListener('click', function() {
   if (body.classList.contains('light-mode')) {
     setTimeout(()=>{
@@ -97,9 +94,7 @@ toggleBtn.addEventListener('click', function() {
     sun.classList.add('dark-mode');
 },1000)
 
-
-    setTimeout(() => {
-        
+    setTimeout(() => {   
     
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
@@ -139,7 +134,6 @@ toggleBtn.addEventListener('click', function() {
   }, 1000)
 }
 
-
 sun.classList.add('reverse');
 
 setTimeout(function() {
@@ -149,18 +143,26 @@ setTimeout(function() {
 
     </script>
 
-<?php while ($row_route = $Routes->fetch_assoc()) { ?>
-                <tr>
-                    <td><?= $row_route['ID']; ?></td>
-                    <td><?= $row_route['title']; ?></td>
-                    <td><?= $row_route['content']; ?></td>
-                    <td><?= $row_route['route']; ?></td>
-                    <td></td>
-                </tr>
+    <div class="album py-5 bg-light">
+        <div class="container d-flex">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<?php while ($row_route = $Routes->fetch_assoc()) { ?>                 
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $row_route['title']; ?></h5>
+                            <p class="card-text"><?= $row_route['content']; ?></p>
+                            <p class="card-text"><?= $row_route['route']; ?></p>
+                        </div>
+                    </div>
+                </div>
+<?php } ?>                 
+            </div>
+        </div>
+    </div>
 
-            <?php } ?>
-        </tbody>
-    </table>
+
 
     <?php
     $sqlRoute = "SELECT ID, Route FROM route";
@@ -168,64 +170,6 @@ setTimeout(function() {
     ?>
 
     <?php include './posts/newModal.php'; ?>
-
-
-<!--     <script>
-
-let editModal = document.getElementById('editModal')
-
-editModal.addEventListener('shown.bs.modal', event=> {
-    let button = event.relatedTarget
-    let id = button.getAttribute('data-bs-id')
-
-    let inputId = editModal.querySelector('.modal-body #id')
-    let inputTitle = editModal.querySelector('.modal-body #title')
-    let inputContent = editModal.querySelector('.modal-body #content')
-    let inputRoute = editModal.querySelector('.modal-body #route')
-
-    let url = "./posts/getPost.php"
-    let formData = new FormData()
-    formData.append('ID',id)
-
-    fetch(url, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-
-        inputId.value = data.ID
-        inputTitle.value = data.title
-        inputContent.value = data.content
-        inputRoute.value = data.id_route
-
-}).catch(err => console.log(err))
-
-})
-</script>
-<script>
-let deleteButtons = document.querySelectorAll('.delete')
-
-deleteButtons.forEach(deleteButton => {
-deleteButton.addEventListener('click', event => {
-    event.preventDefault()
-    let id = deleteButton.getAttribute('data-bs-id')
-    let result = confirm("Are you sure you want to delete post with id ${id}?")
-
-    if (result) {
-        let xhr = new XMLHttpRequest()
-        xhr.open('DELETE', `./config/datapost.php?id=${id}`, true)
-        xhr.send()
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                location.reload()
-            }
-        }
-    }
-    })
-})
-</script> -->
 
     
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
