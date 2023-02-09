@@ -58,6 +58,22 @@ $Routes = $conn->query($sqlRoutes);
         </div>
 
     </div>
+
+    <table class="table table-sm table-striped table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Route</th>
+                <th>Imagen</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    </div>
+
     
     <script>
         const clouds = document.getElementById('top');
@@ -149,6 +165,8 @@ setTimeout(function() {
 });
 
     </script>
+</body>
+</html>
 
 <?php while ($row_route = $Routes->fetch_assoc()) { ?>
                 <tr>
@@ -157,6 +175,10 @@ setTimeout(function() {
                     <td><?= $row_route['content']; ?></td>
                     <td><?= $row_route['route']; ?></td>
                     <td></td>
+                    <td>
+                <a href="#" class="btn btn-sm btn-warning edit" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+                <a href="#" class="btn btn-sm btn-danger delete" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-trash"></i>  Delete</a>
+                    </td>
                 </tr>
 
             <?php } ?>
@@ -170,65 +192,66 @@ setTimeout(function() {
 
     <?php include './posts/newModal.php'; ?>
 
+    <?php $route->data_seek(0); ?>
 
-<!--     <script>
+    <?php include './posts/editModal.php'; ?>
 
-let editModal = document.getElementById('editModal')
+    <script>
 
-editModal.addEventListener('shown.bs.modal', event=> {
-    let button = event.relatedTarget
-    let id = button.getAttribute('data-bs-id')
+        let editModal = document.getElementById('editModal')
 
-    let inputId = editModal.querySelector('.modal-body #id')
-    let inputTitle = editModal.querySelector('.modal-body #title')
-    let inputContent = editModal.querySelector('.modal-body #content')
-    let inputRoute = editModal.querySelector('.modal-body #route')
+        editModal.addEventListener('shown.bs.modal', event=> {
+            let button = event.relatedTarget
+            let id = button.getAttribute('data-bs-id')
 
-    let url = "./posts/getPost.php"
-    let formData = new FormData()
-    formData.append('ID',id)
+            let inputId = editModal.querySelector('.modal-body #id')
+            let inputTitle = editModal.querySelector('.modal-body #title')
+            let inputContent = editModal.querySelector('.modal-body #content')
+            let inputRoute = editModal.querySelector('.modal-body #route')
 
-    fetch(url, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
+            let url = "./posts/getPost.php"
+            let formData = new FormData()
+            formData.append('ID',id)
 
-        inputId.value = data.ID
-        inputTitle.value = data.title
-        inputContent.value = data.content
-        inputRoute.value = data.id_route
+            fetch(url, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
 
-}).catch(err => console.log(err))
+                inputId.value = data.ID
+                inputTitle.value = data.title
+                inputContent.value = data.content
+                inputRoute.value = data.id_route
 
-})
-</script>
+        }).catch(err => console.log(err))
+
+        })
+    </script>
 <script>
-let deleteButtons = document.querySelectorAll('.delete')
+    let deleteButtons = document.querySelectorAll('.delete')
 
-deleteButtons.forEach(deleteButton => {
-deleteButton.addEventListener('click', event => {
-    event.preventDefault()
-    let id = deleteButton.getAttribute('data-bs-id')
-    let result = confirm("Are you sure you want to delete post with id ${id}?")
+    deleteButtons.forEach(deleteButton => {
+        deleteButton.addEventListener('click', event => {
+            event.preventDefault()
+            let id = deleteButton.getAttribute('data-bs-id')
+            let result = confirm(`Are you sure you want to delete post with id ${id}?`)
 
-    if (result) {
-        let xhr = new XMLHttpRequest()
-        xhr.open('DELETE', `./config/datapost.php?id=${id}`, true)
-        xhr.send()
+            if (result) {
+                let xhr = new XMLHttpRequest()
+                xhr.open('DELETE', `./config/datapost.php?id=${id}`, true)
+                xhr.send()
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                location.reload()
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        location.reload()
+                    }
+                }
             }
-        }
-    }
+        })
     })
-})
-</script> -->
-
-    
+</script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
     
 </body>

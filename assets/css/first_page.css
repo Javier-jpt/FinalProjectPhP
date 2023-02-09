@@ -257,8 +257,11 @@ section img#midle{
   }
 
 
-.slide-in-blurred-top {
-	-webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-	        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+.profile__picture{
+  width: 5rem;
+  position: absolute;
+  left: 150rem;
+  z-index: 1000;
+
 }
 

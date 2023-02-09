@@ -35,6 +35,7 @@
         <div class="container py-3">
         <h2 class="text-center index-title">Hello mountain lover!</h2>
             <div class="justify-content-end">
+                <p>Hello mountain lover!</p><br>
                 <p>Welcome to Landscapers, a space designed for mountain lovers, where you can find different routes of hiking, cycling and trail running.</p>
                 <p>This blog is created by four young lovers of sport, mountains and nature, whose passion has brought us together since we were children, growing up loving every corner of the paths that we were discovering.</p>
                 <p>As more we walked on the mountain, as more we climbed it, it didn't matter if it was in hot months or in cold months, we liked more the sensations we experienced. So, one afternoon the idea of sharing these places that stole our hearts with others arose.</p>

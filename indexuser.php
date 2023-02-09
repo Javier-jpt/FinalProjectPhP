@@ -5,6 +5,30 @@ require './config/datapost.php';
 $sqlRoutes = "SELECT p.ID, p.title, p.content, r.Route AS route FROM posts AS p INNER JOIN route AS r ON p.id_route=r.ID";
 $Routes = $conn->query($sqlRoutes);
 
+require 'connection.php';
+session_start(); 
+
+if(isset($_SESSION['username']) && 
+   isset($_SESSION['id'])){
+    $user_id = $_SESSION['id'];
+    $sql = "SELECT * FROM user WHERE ID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$user_id]);
+    $user = $stmt->fetch();
+    if ($user) {
+        $id = $user['ID'];
+        $Username = $user['username'];
+        $Password = $user['password'];
+        $role = $user['role_id'];
+        // Display avatar of the user
+        $sql = "SELECT avatar_url FROM user WHERE ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$user_id]);
+        $user = $stmt->fetch();
+        $avatar_url = $user['avatar_url'];
+    }
+}
+
 ?>
 
 
@@ -29,8 +53,8 @@ $Routes = $conn->query($sqlRoutes);
             <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
         </ul>
         <div>
-            <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
-        </div>
+    <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
+  </div>
     </header>
     <section>
         <img alt="part1" id="top" class="light-mode">
@@ -54,6 +78,22 @@ $Routes = $conn->query($sqlRoutes);
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
             </div>
         </div>
+
+    </div>
+
+    
+    <table class="table table-sm table-striped table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Route</th>
+                <th>Imagen</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
 
     </div>
     
