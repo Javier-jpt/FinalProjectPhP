@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>LandScapers</title>
 </head>
 <body>
 
 <header>
-        <navbar class="navbarheader">
-            <div class="navbarlogo">
-                <a class="logo" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
-                <p class="navbartitle">Landscapers</p>
-            </div> 
-            <div class="navbar__button">
-                <!-- <button class="log-in btn" onclick="window.location.href='login-index.php'">Log In</button>
-                <button class="register btn" onclick="window.location.href='register.php'">SignUp</button>
-                <button class="profile.. btn" onclick="window.location.href='profile.php'">profile</button> -->
-            </div>
-        </navbar>
+<nav class="navbar bg-light">
+<div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="./assets/Mi_proyecto.png"alt="Logo" width="150" height="150" class="d-inline-block align-text-top">
+    <h2 class="position-absolute top-50 start-50 translate-middle text-dark">LandScapers</h2>
+    </a>
+</div>
+</nav>
     </header>
 
     <main>
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div id="login-bg" class="d-flex justify-content-center align-items-center vh-100">
         
 
-        <form class="shadow w-450 p-3" action="login.php" method="post">
+        <form class="shadow w-450 p-3 bg-light.bg-gradient" action="login.php" method="post">
             <h4 class="display-4 text-center fs-0">Log In</h4><br>
             <?php if(isset($_GET['error'])){ ?>
             <div class="alert alert-danger" role="alert">
@@ -62,7 +59,7 @@
 
     </main>
     <footer>
-        <p>LandScapers © 2023</p>
+        <p>LandScapers © 2023 @ <a class="link" href="https://assemblerinstitute.com/?utm_medium=paidsearch&utm_source=google.com&utm_campaign=branding&gclid=CjwKCAiArY2fBhB9EiwAWqHK6sAVZAJi6gNirAygoFPY8NRJJLR-JgCdfZu7ZBZdUynIqii66lt4ahoCo5MQAvD_BwE">Assembler Institute of Technology</a></p>
     </footer>
 
 </html>
