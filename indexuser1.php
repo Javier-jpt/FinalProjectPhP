@@ -30,7 +30,7 @@ $Routes = $conn->query($sqlRoutes);
             <li><button id="btn_top" class="register" onclick="window.location.href='profile.php'">profile</button></li>
             <li> <button id="toggle-mode-btn" class="register">go dark</button></li>
         </ul>
-       
+
     </header>
     <section>
         <img alt="part1" id="top" class="light-mode">
@@ -71,7 +71,6 @@ $Routes = $conn->query($sqlRoutes);
         </thead>
         <tbody>
 
-     
     </div>
 
 
@@ -101,13 +100,13 @@ const darkBackground = document.getElementById('top2');
 const body = document.body;
 
 function cambiarImagen() {
-  clouds.classList.toggle('active');
-  underClouds.classList.toggle('active');
+    clouds.classList.toggle('active');
+    underClouds.classList.toggle('active');
 }
 
 
 toggleBtn.addEventListener('click', function() {
-  if (body.classList.contains('light-mode')) {
+    if (body.classList.contains('light-mode')) {
     setTimeout(()=>{
 
     sun.classList.remove('light-mode');
@@ -133,13 +132,13 @@ toggleBtn.addEventListener('click', function() {
     darkBackground.style.opacity = "1";
 
 },1000);
-  } else {
+    } else {
     setTimeout(() => { 
     sun.classList.remove('dark-mode');
     sun.classList.add('light-mode');
 }, 1000)
 
-  setTimeout(() => {
+    setTimeout(() => {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
     clouds.classList.remove('dark-mode');
@@ -153,7 +152,7 @@ toggleBtn.addEventListener('click', function() {
     darkBackground.classList.add('light-mode');
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "0";
-  }, 1000)
+    }, 1000)
 }
 
 
