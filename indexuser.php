@@ -5,6 +5,30 @@ require './config/datapost.php';
 $sqlRoutes = "SELECT p.ID, p.title, p.content, r.Route AS route FROM posts AS p INNER JOIN route AS r ON p.id_route=r.ID";
 $Routes = $conn->query($sqlRoutes);
 
+require 'connection.php';
+session_start(); 
+
+if(isset($_SESSION['username']) && 
+   isset($_SESSION['id'])){
+    $user_id = $_SESSION['id'];
+    $sql = "SELECT * FROM user WHERE ID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$user_id]);
+    $user = $stmt->fetch();
+    if ($user) {
+        $id = $user['ID'];
+        $Username = $user['username'];
+        $Password = $user['password'];
+        $role = $user['role_id'];
+        // Display avatar of the user
+        $sql = "SELECT avatar_url FROM user WHERE ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$user_id]);
+        $user = $stmt->fetch();
+        $avatar_url = $user['avatar_url'];
+    }
+}
+
 ?>
 
 
@@ -29,8 +53,8 @@ $Routes = $conn->query($sqlRoutes);
             <li> <button id="toggle-mode-btn" class="register">go dark</button></li>
         </ul>
         <div>
-            <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
-        </div>
+    <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
+  </div>
     </header>
     <section>
         <img alt="part1" id="top" class="light-mode">
@@ -175,7 +199,12 @@ setTimeout(function() {
                     <td><?= $row_route['title']; ?></td>
                     <td><?= $row_route['content']; ?></td>
                     <td><?= $row_route['route']; ?></td>
-                    <td></td>
+                    <td>        <div class="post">
+                        <p><?php echo $row_route['title']; ?></p>
+                        <p><?php echo $row_route['content']; ?></p>
+                        </div>
+                    </td>
+                    </td>
                 </tr>
 
             <?php } ?>
