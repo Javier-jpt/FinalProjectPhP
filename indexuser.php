@@ -5,7 +5,7 @@ require './config/datapost.php';
 $sqlRoutes = "SELECT p.ID, p.title, p.content, r.Route AS route FROM posts AS p INNER JOIN route AS r ON p.id_route=r.ID";
 $Routes = $conn->query($sqlRoutes);
 
-require 'connection.php';
+/* require 'connection.php';
 session_start(); 
 
 if(isset($_SESSION['username']) && 
@@ -27,10 +27,9 @@ if(isset($_SESSION['username']) &&
         $user = $stmt->fetch();
         $avatar_url = $user['avatar_url'];
     }
-}
+} */
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,39 +61,19 @@ if(isset($_SESSION['username']) &&
         <h2 id="text"></h2>
         <img src="/assets/css/parte_medio.webp" alt="part1" id="midle" class="light-mode">
         <img  alt="part1" id="sun" class="light-mode initial">
-
         <a href="#sec" id="btn">Explore</a>
         <img alt="part1" id="bottom" class="light-mode">
 
     </section>
     <div class="sec" id="sec">
-
-    <div class="container py-3">
-
-        <h2 class="text-center">LANDSCAPERS</h2>
-
-        <div class="row justify-content-end">
-            <div class="col-auto">
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+        <div class="container py-3">
+            <h2 class="text-center">LANDSCAPERS</h2>
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+                </div>
             </div>
         </div>
-
-    </div>
-
-    
-    <table class="table table-sm table-striped table-hover mt-4">
-        <thead class="table-dark">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Route</th>
-                <th>Imagen</th>
-                <th>Accion</th>
-            </tr>
-        </thead>
-        <tbody>
-
     </div>
     
     <script>
@@ -202,15 +181,12 @@ setTimeout(function() {
         </div>
     </div>
 
-
-
     <?php
     $sqlRoute = "SELECT ID, Route FROM route";
     $route = $conn->query($sqlRoute);
     ?>
 
     <?php include './posts/newModal.php'; ?>
-
     
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
     
