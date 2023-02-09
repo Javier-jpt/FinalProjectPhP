@@ -25,9 +25,9 @@ $Routes = $conn->query($sqlRoutes);
 <header>
         <a href="#" class="logo">Logo</a>
         <ul>
-            <li><button id="btn_top" class="log-in" onclick="window.location.href='login-index.php'">Log In</button></li>
-            <li><button id="btn_top" class="register" onclick="window.location.href='register.php'">SignUp</button></li>
-            <li><button id="btn_top" class="register" onclick="window.location.href='profile.php'">profile</button></li>
+            <li><button id="btn_top" class="log-in" onclick="window.location.href='./session/login-index.php'">Log In</button></li>
+            <li><button id="btn_top" class="register" onclick="window.location.href='./session/register.php'">SignUp</button></li>
+            <!-- <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile.php'">profile</button></li> -->
             <li><button id="toggle-mode-btn" class="register">go dark</button></li>
         </ul>
     </header>
