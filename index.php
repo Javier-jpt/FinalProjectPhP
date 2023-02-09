@@ -35,7 +35,12 @@
         <div class="container py-3">
         <h2 class="text-center">LANDSCAPERS</h2>
             <div class="justify-content-end">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde deleniti qui magni iusto, eos velit, soluta, dignissimos pariatur asperiores magnam alias enim tenetur explicabo exercitationem iure facere blanditiis accusantium ullam!</p>
+                <p>Hello mountain lover!</p><br>
+                <p>Welcome to Landscapers, a space designed for mountain lovers, where you can find different routes of hiking, cycling and trail running.</p>
+                <p>This blog is created by four young lovers of sport, mountains and nature, whose passion has brought us together since we were children, growing up loving every corner of the paths that we were discovering.</p>
+                <p>As more we walked on the mountain, as more we climbed it, it didn't matter if it was in hot months or in cold months, we liked more the sensations we experienced. So, one afternoon the idea of sharing these places that stole our hearts with others arose.</p>
+                <p>On this page we want to give the opportunity to share routes and trails with details to follow them and in this way also create a community.</p><br>
+                <p>Glad you're here and see you on the mountain!</p>
             </div>
         </div>
         
