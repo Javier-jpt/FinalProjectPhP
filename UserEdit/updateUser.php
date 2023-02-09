@@ -14,6 +14,6 @@ $sql = "UPDATE user SET username ='$username', adress ='$adress', role_id ='$rol
 if ($conn->query($sql)) {
 }
 
-header('Location: ../indexusers.php');
+header('Location: ../indexadmin.php');
 
 ?>

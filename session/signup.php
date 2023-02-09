@@ -9,7 +9,7 @@ if(isset($_POST['username']) &&
     isset($_POST['email']) && 
     isset($_POST['password'])){
 
-        include "connection.php";
+        include "../connection.php";
 
     $username = $_POST['username'];
     $adress= $_POST['adress'];

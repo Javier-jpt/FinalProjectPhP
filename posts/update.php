@@ -12,6 +12,6 @@ $sql = "UPDATE posts SET title ='$title', content ='$content', id_route =$route 
 if ($conn->query($sql)) {
 }
 
-header('Location: ../indexuser1.php');
+header('Location: ../indexuser.php');
 
 ?>

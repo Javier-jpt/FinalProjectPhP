@@ -7,7 +7,7 @@ if (isset($_POST['ID']) && is_numeric($_POST['ID'])) {
   $sql = "DELETE FROM user WHERE ID = $id";
 
   if ($conn->query($sql)) {
-    header('Location: ../indexusers.php');
+    header('Location: ../indexadmin.php');
   } else {
     // handle the error
   }

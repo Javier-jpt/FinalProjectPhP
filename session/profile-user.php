@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+include "../connection.php";
 
 session_start();
 
@@ -44,35 +44,33 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>LandScapers</title>
 </head>
 <body>
 <body>
+    
     <header>
-        <navbar class="navbarheader">
-            <!-- cambiar ruta index user -->
-            <div class="navbarlogo">
-                <a class="register" onclick="window.location.href='index.php'"><img class="navbarimg" src="./assets/Mi_proyecto.png"></a>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="../assets/Mi_proyecto.png"alt="Logo" width="150" height="150" class="d-inline-block align-text-top" onclick="window.location.href='../index.php'">
+                <h2 class="position-absolute top-50 start-50 translate-middle text-dark">LandScapers</h2>
+                </a>
+                <div>
+                    <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
+                </div>
             </div>
-            <p class="navbartitle">Landscapers</p>
-            <div>
-                
-              <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
-
-                    <!-- <img src="./assets/redPanda.png" alt="panda" class="profile__picture"> -->
-            </div>
-
-        </navbar>
+        </nav>
     </header>
 
     <main class="profile-main">
 
-	<h1>My Profile</h1>
+	<h1>My Profile</h1><br>
 
 	
-	<h2>User Information</h2>
+	<h2>User Information</h2><br>
 
 <p>Username: <?php echo $username; ?></p>
 <p>Email: <?php echo $email; ?></p>
@@ -86,6 +84,6 @@ try {
 </body>
 
 <footer>
-        <p>LandScapers © 2023</p>
+        <p>LandScapers © 2023 @ <a class="link" href="https://assemblerinstitute.com/?utm_medium=paidsearch&utm_source=google.com&utm_campaign=branding&gclid=CjwKCAiArY2fBhB9EiwAWqHK6sAVZAJi6gNirAygoFPY8NRJJLR-JgCdfZu7ZBZdUynIqii66lt4ahoCo5MQAvD_BwE">Assembler Institute of Technology</a></p>
 </footer>
 </html>

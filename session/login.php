@@ -2,18 +2,18 @@
 
 session_start(); 
 
-include "connection.php";
+include "../connection.php";
 
 
 
 if(isset($_SESSION['role'])){
     switch($_SESSION['role']){
         case 1:
-            header('Location: profile-admin.php');
+            header('Location: ../indexadmin.php');
         break;
 
         case 2:
-            header('Location: profile-user.php');
+            header('Location: ../indexuser.php');
         break;
 
         default:
@@ -58,11 +58,11 @@ if(isset($_POST['username']) &&
                     $_SESSION['id'] = $id;
                     switch($_SESSION['role']){
                         case 1:
-                            header('Location: profile-admin.php');
+                            header('Location: ../indexadmin.php');
                         break;
                 
                         case 2:
-                            header('Location: profile-user.php');
+                            header('Location: ../indexuser.php');
                         break;
                 
                         default:
@@ -89,7 +89,7 @@ if(isset($_POST['username']) &&
     }
 
 }else{
-    header("Location: login-index.php?error=error");
+    header("Location: login-index.php");
     exit;
 }
 

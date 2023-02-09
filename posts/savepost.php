@@ -11,4 +11,4 @@ if($conn->query($sql)) {
     $id = $conn->insert_id;
 }
 
-header('Location: ../indexuser1.php');
+header('Location: ../indexuser.php');

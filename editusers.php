@@ -18,14 +18,23 @@ $role = $conn->query($sqlroles);
     <script src="./assets/js/logic.js"></script>
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
-    <div class="sec" id="sec">
-    <div class="container py-3">
 
-        <h2 class="text-center">LANDSCAPERS</h2>
+<header>
+    <nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <img src="./assets/Mi_proyecto.png"alt="Logo" width="150" height="150" class="d-inline-block align-text-top" onclick="window.location.href='indexadmin.php'">
+        <h2 class="position-absolute top-50 start-50 translate-middle text-dark">LandScapers</h2>
+        </a>
     </div>
+    </nav>
+</header>
 
+    <div class="sec" id="sec">
     <table class="table table-sm table-striped table-hover mt-4">
         <thead class="table-dark">
             <tr>
