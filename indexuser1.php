@@ -43,8 +43,6 @@ $Routes = $conn->query($sqlRoutes);
 
     </section>
     <div class="sec" id="sec">
-      
-
 
 
     <div class="container py-3">
