@@ -68,17 +68,13 @@ try {
     <main class="profile-main">
 
 	<h1>My Profile</h1><br>
-
-	
-	<h2>User Information</h2><br>
-
 <p>Username: <?php echo $username; ?></p>
 <p>Email: <?php echo $email; ?></p>
 <p>Adress: <?php echo $adress; ?></p>
 <p>Password: <?php echo $password; ?></p>
 
 
-<a href="logout.php" class="link-secondary">Log Out</a>
+<button id="btn_top" class="link-secondary" onclick="window.location.href='logout.php'">Logout</button>
 
 </main>
 </body>

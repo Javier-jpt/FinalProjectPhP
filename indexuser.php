@@ -4,31 +4,6 @@ require './config/datapost.php';
 
 $sqlRoutes = "SELECT p.ID, p.title, p.content, r.Route AS route FROM posts AS p INNER JOIN route AS r ON p.id_route=r.ID";
 $Routes = $conn->query($sqlRoutes);
-
-/* require 'connection.php';
-session_start(); 
-
-if(isset($_SESSION['username']) && 
-   isset($_SESSION['id'])){
-    $user_id = $_SESSION['id'];
-    $sql = "SELECT * FROM user WHERE ID = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$user_id]);
-    $user = $stmt->fetch();
-    if ($user) {
-        $id = $user['ID'];
-        $Username = $user['username'];
-        $Password = $user['password'];
-        $role = $user['role_id'];
-        // Display avatar of the user
-        $sql = "SELECT avatar_url FROM user WHERE ID = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$user_id]);
-        $user = $stmt->fetch();
-        $avatar_url = $user['avatar_url'];
-    }
-} */
-
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +15,7 @@ if(isset($_SESSION['username']) &&
     <title>LandScapers</title>
     <script src="./assets/js/logic.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/first_page.css">
@@ -48,12 +24,9 @@ if(isset($_SESSION['username']) &&
 <header>
         <a href="#" class="logo"></a>
         <ul>
-            <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
+            <li><button id="btn_top" class="registerUser" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
             <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
         </ul>
-        <div>
-    <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
-  </div>
     </header>
     <section>
         <img alt="part1" id="top" class="light-mode">
@@ -111,7 +84,7 @@ toggleBtn.addEventListener('click', function() {
 
     sun.classList.remove('light-mode');
     sun.classList.add('dark-mode');
-},1000)
+},1)
 
     setTimeout(() => {   
     
@@ -129,12 +102,12 @@ toggleBtn.addEventListener('click', function() {
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "1";
 
-},1000);
+},1);
   } else {
     setTimeout(() => { 
     sun.classList.remove('dark-mode');
     sun.classList.add('light-mode');
-}, 1000)
+}, 1)
 
   setTimeout(() => {
     body.classList.remove('dark-mode');
@@ -150,7 +123,7 @@ toggleBtn.addEventListener('click', function() {
     darkBackground.classList.add('light-mode');
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "0";
-  }, 1000)
+  }, 1)
 }
 
 sun.classList.add('reverse');

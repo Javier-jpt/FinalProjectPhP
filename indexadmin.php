@@ -16,7 +16,7 @@ $Routes = $conn->query($sqlRoutes);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandScapers</title>
     <script src="./assets/js/logic.js"></script>
-
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/first_page.css">
@@ -29,9 +29,6 @@ $Routes = $conn->query($sqlRoutes);
             <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
             <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
         </ul>
-        <div>
-            <img src="<?php echo $user['avatar_url']; ?>" alt="Profile Avatar" class="profile__picture">
-        </div>
     </header>
     <section>
         <img alt="part1" id="top" class="light-mode">
@@ -112,7 +109,7 @@ toggleBtn.addEventListener('click', function() {
 
     sun.classList.remove('light-mode');
     sun.classList.add('dark-mode');
-},1000)
+},1)
 
 
     setTimeout(() => {
@@ -132,12 +129,12 @@ toggleBtn.addEventListener('click', function() {
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "1";
 
-},1000);
+},1);
   } else {
     setTimeout(() => { 
     sun.classList.remove('dark-mode');
     sun.classList.add('light-mode');
-}, 1000)
+}, 1)
 
   setTimeout(() => {
     body.classList.remove('dark-mode');
@@ -153,7 +150,7 @@ toggleBtn.addEventListener('click', function() {
     darkBackground.classList.add('light-mode');
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "0";
-  }, 1000)
+  }, 1)
 }
 
 

@@ -81,9 +81,9 @@ function cambiarImagen() {
 toggleBtn.addEventListener('click', function() {
   if (body.classList.contains('light-mode')) {
     setTimeout(()=>{
-    sun.classList.remove('light-mode');
-    sun.classList.add('dark-mode');
-},1000)
+        sun.classList.remove('light-mode');
+        sun.classList.add('dark-mode');
+},1)
 
     setTimeout(() => {     
     
@@ -101,12 +101,12 @@ toggleBtn.addEventListener('click', function() {
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "1";
 
-},1000);
+},1);
   } else {
     setTimeout(() => { 
     sun.classList.remove('dark-mode');
     sun.classList.add('light-mode');
-}, 1000)
+}, 1)
 
   setTimeout(() => {
     body.classList.remove('dark-mode');
@@ -122,7 +122,7 @@ toggleBtn.addEventListener('click', function() {
     darkBackground.classList.add('light-mode');
     clouds.style.opacity = "1";
     darkBackground.style.opacity = "0";
-  }, 1000)
+  }, 1)
 }
 
 

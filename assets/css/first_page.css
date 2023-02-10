@@ -265,3 +265,6 @@ section img#midle{
 
 }
 
+body.dark-mode{
+background-color: #0d0557;
+}
