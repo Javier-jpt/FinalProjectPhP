@@ -7,7 +7,6 @@ $Routes = $conn->query($sqlRoutes);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,56 +20,49 @@ $Routes = $conn->query($sqlRoutes);
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/first_page.css">
 </head>
+
 <body>
-<header>
+    <header>
         <a href="#" class="logo"></a>
-        <ul>
-            <li><button id="btn_top" class="register" onclick="window.location.href='editusers.php'">Users</button></li>
-            <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
-            <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
-        </ul>
+            <ul>
+                <li><button id="btn_top" class="register" onclick="window.location.href='editusers.php'">Users</button></li>
+                <li><button id="btn_top" class="register" onclick="window.location.href='./session/profile-user.php'">Profile</button></li>
+                <li> <button id="toggle-mode-btn" class="register">Go dark</button></li>
+            </ul>
     </header>
+
     <section>
         <img alt="part1" id="top" class="light-mode">
         <img alt="part1" id="top2" class="light-mode">
         <h2 id="text"></h2>
         <img src="/assets/css/parte_medio.webp" alt="part1" id="midle" class="light-mode">
         <img  alt="part1" id="sun" class="light-mode initial">
-
         <a href="#sec" id="btn">Explore</a>
         <img alt="part1" id="bottom" class="light-mode">
-
     </section>
-    <div class="sec" id="sec">
-
-
-    <div class="container py-3">
-
-        <h2 class="text-center">LANDSCAPERS</h2>
-
-        <div class="row justify-content-end">
-            <div class="col-auto">
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+    
+    <div class="album py-5 bg-light sec" id="sec">
+        <div class="container">
+            <h2 class="text-center">LANDSCAPERS</h2>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<?php while ($row_route = $Routes->fetch_assoc()) { ?>                 
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $row_route['title']; ?></h5>
+                            <p class="card-text"><?= $row_route['content']; ?></p>
+                            <p class="card-text"><?= $row_route['route']; ?></p>
+                            <a href="#" class="btn btn-sm btn-warning edit" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger delete" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-trash"></i>  Delete</a>
+                        </div>
+                    </div>
+                </div>
+<?php } ?>                 
             </div>
         </div>
-
     </div>
-
-    <table class="table table-sm table-striped table-hover mt-4">
-        <thead class="table-dark">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Route</th>
-                <th>Imagen</th>
-                <th>Accion</th>
-            </tr>
-        </thead>
-        <tbody>
-
-    </div>
-
     
     <script>
         const clouds = document.getElementById('top');
@@ -102,7 +94,6 @@ function cambiarImagen() {
   underClouds.classList.toggle('active');
 }
 
-
 toggleBtn.addEventListener('click', function() {
   if (body.classList.contains('light-mode')) {
     setTimeout(()=>{
@@ -111,9 +102,7 @@ toggleBtn.addEventListener('click', function() {
     sun.classList.add('dark-mode');
 },1)
 
-
-    setTimeout(() => {
-        
+    setTimeout(() => {      
     
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
@@ -153,7 +142,6 @@ toggleBtn.addEventListener('click', function() {
   }, 1)
 }
 
-
 sun.classList.add('reverse');
 
 setTimeout(function() {
@@ -162,25 +150,6 @@ setTimeout(function() {
 });
 
     </script>
-</body>
-</html>
-
-<?php while ($row_route = $Routes->fetch_assoc()) { ?>
-                <tr>
-                    <td><?= $row_route['ID']; ?></td>
-                    <td><?= $row_route['title']; ?></td>
-                    <td><?= $row_route['content']; ?></td>
-                    <td><?= $row_route['route']; ?></td>
-                    <td></td>
-                    <td>
-                <a href="#" class="btn btn-sm btn-warning edit" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
-                <a href="#" class="btn btn-sm btn-danger delete" data-bs-id="<?= $row_route['ID'] ?>"><i class="fa-solid fa-trash"></i>  Delete</a>
-                    </td>
-                </tr>
-
-            <?php } ?>
-        </tbody>
-    </table>
 
     <?php
     $sqlRoute = "SELECT ID, Route FROM route";
@@ -249,7 +218,11 @@ setTimeout(function() {
         })
     })
 </script>
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="footer">
+        <p>LandScapers © 2023 @ <a href="https://assemblerinstitute.com/?utm_medium=paidsearch&utm_source=google.com&utm_campaign=branding&gclid=CjwKCAiArY2fBhB9EiwAWqHK6sAVZAJi6gNirAygoFPY8NRJJLR-JgCdfZu7ZBZdUynIqii66lt4ahoCo5MQAvD_BwE">Assembler Institute of Technology</a></p>
+    </footer>
     
 </body>
 </html>

@@ -30,7 +30,6 @@
                   <?php } ?>
                 </select>
             </div>
-
             <div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>  Save changes</button>

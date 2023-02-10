@@ -36,19 +36,36 @@ $Routes = $conn->query($sqlRoutes);
         <img  alt="part1" id="sun" class="light-mode initial">
         <a href="#sec" id="btn">Explore</a>
         <img alt="part1" id="bottom" class="light-mode">
-
     </section>
-    <div class="sec" id="sec">
-        <div class="container py-3">
+
+    <div class="album py-5 bg-light sec" id="sec">
+        <div class="container">
             <h2 class="text-center">LANDSCAPERS</h2>
-            <div class="row justify-content-end">
-                <div class="col-auto">
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+            <a href="#" class="btn btn-primary justify-content-end" data-bs-toggle="modal" data-bs-target="#newModal"><i class="fa-solid fa-circle-plus"></i> New Post</a>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<?php while ($row_route = $Routes->fetch_assoc()) { ?>                 
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $row_route['title']; ?></h5>
+                            <p class="card-text"><?= $row_route['content']; ?></p>
+                            <p class="card-text"><?= $row_route['route']; ?></p>
+                        </div>
+                    </div>
                 </div>
+<?php } ?>                 
             </div>
         </div>
     </div>
-    
+
+    <?php
+    $sqlRoute = "SELECT ID, Route FROM route";
+    $route = $conn->query($sqlRoute);
+    ?>
+
+    <?php include './posts/newModal.php'; ?>
+
     <script>
         const clouds = document.getElementById('top');
         const underClouds = document.getElementById('top2');
@@ -134,34 +151,12 @@ setTimeout(function() {
 });
 
     </script>
-
-    <div class="album py-5 bg-light">
-        <div class="container d-flex">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<?php while ($row_route = $Routes->fetch_assoc()) { ?>                 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $row_route['title']; ?></h5>
-                            <p class="card-text"><?= $row_route['content']; ?></p>
-                            <p class="card-text"><?= $row_route['route']; ?></p>
-                        </div>
-                    </div>
-                </div>
-<?php } ?>                 
-            </div>
-        </div>
-    </div>
-
-    <?php
-    $sqlRoute = "SELECT ID, Route FROM route";
-    $route = $conn->query($sqlRoute);
-    ?>
-
-    <?php include './posts/newModal.php'; ?>
     
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="footer">
+        <p>LandScapers © 2023 @ <a href="https://assemblerinstitute.com/?utm_medium=paidsearch&utm_source=google.com&utm_campaign=branding&gclid=CjwKCAiArY2fBhB9EiwAWqHK6sAVZAJi6gNirAygoFPY8NRJJLR-JgCdfZu7ZBZdUynIqii66lt4ahoCo5MQAvD_BwE">Assembler Institute of Technology</a></p>
+    </footer>
     
 </body>
 </html>
