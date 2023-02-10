@@ -49,7 +49,7 @@ $Routes = $conn->query($sqlRoutes);
 <?php while ($row_route = $Routes->fetch_assoc()) { ?>                 
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="">
+                        <img src="https://picsum.photos/200/300?random=2" alt="">
                         <div class="card-body">
                             <h5 class="card-title"><?= $row_route['title']; ?></h5>
                             <p class="card-text"><?= $row_route['content']; ?></p>
