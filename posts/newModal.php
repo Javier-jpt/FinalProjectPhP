@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- Create Modal -->
 
 
 <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">

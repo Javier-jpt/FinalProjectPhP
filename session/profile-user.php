@@ -65,7 +65,7 @@ try {
         </nav>
     </header>
 
-    <main class="profile-main">
+    <main class="profile-main"><br><br><br>
 
 	<h1>My Profile</h1><br>
 <p>Username: <?php echo $username; ?></p>
